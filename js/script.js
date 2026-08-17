@@ -67,6 +67,21 @@ function displayBooks() {
     }
 }
 
+const formSubmit = document.querySelector("button.form-submit-btn");
+formSubmit.addEventListener("click", (event) => {
+    let title = document.querySelector("input[name='title']");
+    let author = document.querySelector("input[name='author']");
+    let pages = document.querySelector("input[name='pages']");
+    let read = document.querySelector("input[name='read']:checked");
+    addBookToLibrary(title.value, author.value, pages.value, read.value);
+    displayBooks();
+});
+
+const dialogBtn = document.querySelector("button.dialog-btn");
+dialogBtn.addEventListener("click", () => {
+    document.querySelector("form").reset(); // clear form for next book
+});
+
 // pre-existing data
 let book1 = new Book("Limited Wish", "Mark Lawrence", 222, true);
 let book2 = new Book("The Light of All That Falls", "James Islington", 864, true);
