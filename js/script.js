@@ -54,7 +54,14 @@ function createRow(title, author, pages, read) {
     tableBody.appendChild(tableRow);
 }
 
+function clearTable() {
+    const tableBody = document.querySelector("tbody");
+    while (tableBody.firstChild)
+    tableBody.removeChild(tableBody.firstChild);
+}
+
 function displayBooks() {
+    clearTable();
     for (let book of myLibrary) {
         createRow(book.title, book.author, book.pages, book.read);
     }
@@ -68,4 +75,5 @@ myLibrary.push(book1);
 myLibrary.push(book2);
 myLibrary.push(book3);
 
+displayBooks();
 displayBooks();
