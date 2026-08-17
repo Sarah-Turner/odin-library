@@ -24,35 +24,39 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
+function createRow(title, author, pages, read) {
+    const tableBody = document.querySelector("tbody");
+    const tableRow = document.createElement("tr");
+    const titleCell = document.createElement("td");
+    const authorCell = document.createElement("td");
+    const pagesCell = document.createElement("td");
+    const readCell = document.createElement("td");
+    const toggleReadCell = document.createElement("td");
+    const readBtn = document.createElement("button");
+    const deleteCell = document.createElement("td");
+    const deleteBtn = document.createElement("button");
+    
+    titleCell.textContent = title;
+    authorCell.textContent = author;
+    pagesCell.textContent = pages;
+    readCell.textContent = (read)? "Read" : "Not Read";
+    readBtn.textContent = "Toggle Read";
+    deleteBtn.textContent = "Delete"
+
+    toggleReadCell.appendChild(readBtn);
+    deleteCell.appendChild(deleteBtn);
+    tableRow.appendChild(titleCell);
+    tableRow.appendChild(authorCell);
+    tableRow.appendChild(pagesCell);
+    tableRow.appendChild(readCell);
+    tableRow.appendChild(toggleReadCell);
+    tableRow.appendChild(deleteCell);
+    tableBody.appendChild(tableRow);
+}
+
 function displayBooks() {
     for (let book of myLibrary) {
-        const tableBody = document.querySelector("tbody");
-        const tableRow = document.createElement("tr");
-        const title = document.createElement("td");
-        const author = document.createElement("td");
-        const pages = document.createElement("td");
-        const read = document.createElement("td");
-        const toggleReadCell = document.createElement("td");
-        const readBtn = document.createElement("button");
-        const deleteCell = document.createElement("td");
-        const deleteBtn = document.createElement("button");
-        
-        title.textContent = book.title;
-        author.textContent = book.author;
-        pages.textContent = book.pages;
-        read.textContent = book.read;
-        readBtn.textContent = "Toggle Read";
-        deleteBtn.textContent = "Delete"
-
-        toggleReadCell.appendChild(readBtn);
-        deleteCell.appendChild(deleteBtn);
-        tableRow.appendChild(title);
-        tableRow.appendChild(author);
-        tableRow.appendChild(pages);
-        tableRow.appendChild(read);
-        tableRow.appendChild(toggleReadCell);
-        tableRow.appendChild(deleteCell);
-        tableBody.appendChild(tableRow);
+        createRow(book.title, book.author, book.pages, book.read);
     }
 }
 
