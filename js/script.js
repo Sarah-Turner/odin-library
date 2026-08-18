@@ -33,6 +33,28 @@ function removeBookFromLibrary(bookId) {
     }
 }
 
+function toggleReadStatus(bookId) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].id === bookId) {
+            myLibrary[i].read = (myLibrary[i].read)? false : true;
+            break;
+        }
+    }
+}
+
+function updateReadCell(bookId, readCell) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].id === bookId) {
+            if (myLibrary[i].read) {
+                readCell.textContent = "Read";
+            } else {
+                readCell.textContent = "Not Read";
+            }
+            break;
+        }
+    }
+}
+
 function createRow(book) {
     const tableBody = document.querySelector("tbody");
     const tableRow = document.createElement("tr");
@@ -81,14 +103,20 @@ function displayBooks() {
 
 document.addEventListener("click", (event) => {
     let target = event.target;
+    let tableRow;
+    let bookId;
     switch(target.className) {
         case "delete-btn":
-            let tableRow = target.parentElement.parentElement;
-            let bookId = tableRow.dataset.bookId;
+            tableRow = target.parentElement.parentElement;
+            bookId = tableRow.dataset.bookId;
             removeBookFromLibrary(bookId);
             tableRow.remove();
             break;
         case "read-btn":
+            tableRow = target.parentElement.parentElement;
+            bookId = tableRow.dataset.bookId;
+            toggleReadStatus(bookId);
+            updateReadCell(bookId, tableRow.children[3]);
             break;
     }
 });
