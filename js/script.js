@@ -24,7 +24,7 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-function createRow(title, author, pages, read) {
+function createRow(book) {
     const tableBody = document.querySelector("tbody");
     const tableRow = document.createElement("tr");
     const titleCell = document.createElement("td");
@@ -36,10 +36,11 @@ function createRow(title, author, pages, read) {
     const deleteCell = document.createElement("td");
     const deleteBtn = document.createElement("button");
     
-    titleCell.textContent = title;
-    authorCell.textContent = author;
-    pagesCell.textContent = pages;
-    readCell.textContent = (read)? "Read" : "Not Read";
+    tableRow.setAttribute("data-book-id", book.id);
+    titleCell.textContent = book.title;
+    authorCell.textContent = book.author;
+    pagesCell.textContent = book.pages;
+    readCell.textContent = (book.read)? "Read" : "Not Read";
     readBtn.textContent = "Toggle Read";
     deleteBtn.textContent = "Delete"
 
@@ -63,7 +64,7 @@ function clearTable() {
 function displayBooks() {
     clearTable();
     for (let book of myLibrary) {
-        createRow(book.title, book.author, book.pages, book.read);
+        createRow(book);
     }
 }
 
