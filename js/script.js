@@ -24,6 +24,15 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
+function removeBookFromLibrary(bookId) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].id === bookId) {
+            myLibrary.splice(i, 1);
+            break;
+        }
+    }
+}
+
 function createRow(book) {
     const tableBody = document.querySelector("tbody");
     const tableRow = document.createElement("tr");
@@ -42,7 +51,9 @@ function createRow(book) {
     pagesCell.textContent = book.pages;
     readCell.textContent = (book.read)? "Read" : "Not Read";
     readBtn.textContent = "Toggle Read";
-    deleteBtn.textContent = "Delete"
+    readBtn.classList.add("read-btn");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
 
     toggleReadCell.appendChild(readBtn);
     deleteCell.appendChild(deleteBtn);
@@ -67,6 +78,20 @@ function displayBooks() {
         createRow(book);
     }
 }
+
+document.addEventListener("click", (event) => {
+    let target = event.target;
+    switch(target.className) {
+        case "delete-btn":
+            let tableRow = target.parentElement.parentElement;
+            let bookId = tableRow.dataset.bookId;
+            removeBookFromLibrary(bookId);
+            tableRow.remove();
+            break;
+        case "read-btn":
+            break;
+    }
+});
 
 const formSubmit = document.querySelector("button.form-submit-btn");
 formSubmit.addEventListener("click", (event) => {
