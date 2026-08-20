@@ -40,6 +40,24 @@ dialog {
 }
 
 /* || MODAL */
+.dialog-btn {
+    color: white;
+    background-color: #00a400;
+    border: none;
+    border-radius: 15px;
+    width: 120px;
+    height: 30px;
+}
+
+.dialog-btn:hover {
+    background-color: #009200;
+}
+
+.dialog-btn:active {
+    outline: 1px solid #00a400;
+    background-color: #00a400;
+}
+
 .dialog-btn-close {
     display: flex; /* center svg */
     justify-content: center;
@@ -115,11 +133,11 @@ th:nth-child(4) {
 
 .read-btn:hover,
 .delete-btn:hover {
-    outline: 1px solid #00a6ff;
     background-color: #00abe3;
 }
 
 .read-btn:active,
 .delete-btn:active {
+    outline: 1px solid #00a6ff;
     background-color: var(--primary-background);
 }
