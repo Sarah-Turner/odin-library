@@ -9,7 +9,7 @@ html {
 /* || VARIABLES */
 :root {
     --main-font: system-ui;
-    --primary-background: deepskyblue;
+    --primary-background: #00bfff;
 }
 
 /* || GENERAL STYLES */
@@ -102,4 +102,24 @@ th:nth-child(2) {
 th:nth-child(3),
 th:nth-child(4) {
     width: 90px;
+}
+
+.read-btn,
+.delete-btn {
+    color: white;
+    background-color: var(--primary-background);
+    border: none;
+    border-radius: 15px;
+    height: 25px;
+}
+
+.read-btn:hover,
+.delete-btn:hover {
+    outline: 1px solid #00a6ff;
+    background-color: #00abe3;
+}
+
+.read-btn:active,
+.delete-btn:active {
+    background-color: var(--primary-background);
 }
