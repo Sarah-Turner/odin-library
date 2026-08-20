@@ -7,27 +7,41 @@ html {
 }
 
 /* || VARIABLES */
-
-/* || GENERAL STYLES */
-table {
-    border-spacing: 0px;
-    border-collapse: collapse; /* Get rid of spacing between cells */
+:root {
+    --main-font: system-ui;
+    --primary-background: deepskyblue;
 }
 
-th,
-td {
-    border: 1px solid black;
-    padding: 10px;
+/* || GENERAL STYLES */
+body {
+    font-family: var(--main-font);
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 75px 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 40px;
 }
 
 dialog {
     position: relative;
     padding: 50px;
 }
+/* || HEADER */
+.header {
+    justify-self: stretch; /* so div takes up full width */
+    background-color: var(--primary-background);
+}
 
-/* || Modal */
+.header h1 {
+    text-align: center;
+    color: white;
+}
+
+/* || MODAL */
 .dialog-btn-close {
-    display: flex;
+    display: flex; /* center svg */
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -47,4 +61,45 @@ dialog {
 .close-svg:hover {
     stroke: red;
     fill: red;
+}
+
+/* || FORM */
+
+/* || TABLE */
+table {
+    table-layout: fixed;
+    border-spacing: 0px;
+    border-collapse: collapse; /* Get rid of spacing between cells */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 1px 10px 1px #e1e1e1;
+}
+
+caption {
+    margin-bottom: 15px;
+}
+
+th,
+td {
+    border: none;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+td {
+    height: 60px;
+}
+
+th:first-child,
+th:nth-child(2) {
+    width: 250px;
+}
+
+th:nth-child(3),
+th:nth-child(4) {
+    width: 75px;
 }
