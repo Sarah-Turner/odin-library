@@ -10,6 +10,7 @@ html {
 :root {
     --main-font: system-ui;
     --primary-background: #00bfff;
+    --radius: 15px;
 }
 
 /* || GENERAL STYLES */
@@ -40,6 +41,11 @@ dialog {
 }
 
 /* || MODAL */
+dialog {
+    border: none;
+    border-radius: var(--radius);
+}
+
 .dialog-btn {
     color: white;
     background-color: #00a400;
@@ -89,7 +95,7 @@ table {
     border-spacing: 0px;
     border-collapse: collapse; /* Get rid of spacing between cells */
     border: none;
-    border-radius: 15px;
+    border-radius: var(--radius);
     box-shadow: 0px 1px 10px 1px #e1e1e1;
 }
 
