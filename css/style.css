@@ -114,8 +114,9 @@ dialog {
     padding: 5px;
 }
 
-.form-control input[type="text"] {
-    width: 200px;
+.form-control input[type="text"],
+.form-control input[type="number"] {
+    width: 150px;
 }
 
 .form-control label,
