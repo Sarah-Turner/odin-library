@@ -18,36 +18,24 @@
         </button>
         <form method="dialog" name="book-form">
             <div class="form-control">
-                <label for="title-input">
-                    Book Title*:
-                    <input required id="title-input" type="text" name="title" minlength="1">
-                </label>
+                <label for="title-input">Book Title*:</label>
+                <input required id="title-input" type="text" name="title" minlength="1">
             </div>
             <div class="form-control">
-                <label for="author-input">
-                    Author*:
-                    <input required id="author-input" type="text" name="author" minlength="1">
-                </label>
+                <label for="author-input">Author*:</label>
+                <input required id="author-input" type="text" name="author" minlength="1">
             </div>
             <div class="form-control">
-                <label for="pages-input">
-                    Pages*:
-                    <input required id="pages-input" type="number" name="pages" min="1">
-                </label>
+                <label for="pages-input">Pages*:</label>
+                <input required id="pages-input" type="number" name="pages" min="1">
             </div>
-            <div class="form-control">
+            <div class="form-control-radio">
                 <fieldset>
-                    <legend>Have you read the book?*:</legend>
-                    <ul>
-                        <li>
-                            <input required id="not-read" type="radio" name="read" value="false">
-                            <label for="not-read">No</label>
-                        </li>
-                        <li>
-                            <input required id="read" type="radio" name="read" value="true">
-                            <label for="read">Yes</label>
-                        </li>
-                    </ul>
+                    <legend>Have you read it?*:</legend>
+                    <input required id="not-read" type="radio" name="read" value="false">
+                    <label for="not-read">No</label>
+                    <input required id="read" type="radio" name="read" value="true">
+                    <label for="read">Yes</label>
                 </fieldset>
             </div>
             <div class="form-control">

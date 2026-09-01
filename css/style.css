@@ -6,6 +6,16 @@ html {
   box-sizing: inherit;
 }
 
+fieldset {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+legend {
+    padding: 0px;
+}
+
 /* || VARIABLES */
 :root {
     --main-font: system-ui;
@@ -27,8 +37,10 @@ body {
 
 dialog {
     position: relative;
-    padding: 50px;
+    width: 450px;
+    padding: 40px;
 }
+
 /* || HEADER */
 .header {
     justify-self: stretch; /* so div takes up full width */
@@ -46,7 +58,8 @@ dialog {
     border-radius: var(--radius);
 }
 
-.dialog-btn {
+.dialog-btn,
+.form-submit-btn {
     color: white;
     background-color: #00a400;
     border: none;
@@ -55,11 +68,13 @@ dialog {
     height: 30px;
 }
 
-.dialog-btn:hover {
+.dialog-btn:hover,
+.form-submit-btn:hover {
     background-color: #009200;
 }
 
-.dialog-btn:active {
+.dialog-btn:active,
+.form-submit-btn:active {
     outline: 1px solid #00a400;
     background-color: #00a400;
 }
@@ -88,6 +103,57 @@ dialog {
 }
 
 /* || FORM */
+.form-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* avoid stretching */
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form-control input {
+    padding: 5px;
+}
+
+.form-control input[type="text"] {
+    width: 200px;
+}
+
+.form-control label,
+.form-control-radio label {
+    padding-right: 20px;
+}
+
+.form-control label {
+    text-align: right;
+    width: 160px;
+}
+
+.form-control-radio {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-control-radio legend,
+.form-control-radio input,
+.form-control-radio label {
+    font-family: var(--main-font);
+    float: left;
+}
+
+.form-control-radio legend {
+    text-align: right;
+    padding-left: 3px;
+    padding-right: 17px;
+}
+
+.form-control:last-child {
+    margin: 0px;
+}
+
+.form-submit-btn {
+    margin: 0px auto;
+    margin-top: 20px;
+}
 
 /* || TABLE */
 table {
