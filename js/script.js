@@ -139,7 +139,7 @@ dialogBtn.addEventListener("click", () => {
     document.querySelector("form").reset(); // clear form for next book
 });
 
-// pre-existing data
+/* pre-existing test data
 let book1 = new Book("Limited Wish", "Mark Lawrence", 222, true);
 let book2 = new Book("The Light of All That Falls", "James Islington", 864, true);
 let book3 = new Book("All Systems Red", "Martha Wells", 144, false);
@@ -149,3 +149,4 @@ myLibrary.push(book3);
 
 displayBooks();
 displayBooks();
+*/
