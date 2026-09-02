@@ -22,7 +22,7 @@ html {
 }
 
 fieldset {
-    border: none;
+    border: none; /* get rid of default border */
     padding: 0px;
     margin: 0px;
 }
@@ -51,7 +51,7 @@ body {
 }
 
 dialog {
-    position: relative;
+    position: relative; /* to position close btn */
     width: 450px;
     padding: 40px;
 }
@@ -74,7 +74,7 @@ button {
 
 /* || MODAL */
 dialog {
-    border: none;
+    border: none; /* get rid of default border */
     border-radius: var(--radius);
 }
 
@@ -103,7 +103,7 @@ dialog {
     display: flex; /* center svg */
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: absolute; /* to put close btn in top right corner */
     top: 0px;
     right: 0px;
     background-color: white;
@@ -157,12 +157,12 @@ dialog {
 }
 
 .form-control label {
-    text-align: right;
+    text-align: right; /* so text is next to form control */
     width: 160px;
 }
 
 .form-control-radio {
-    display: block;
+    display: block; /* to use floats to position radio btns */
     margin-bottom: 20px;
 }
 
@@ -175,7 +175,7 @@ dialog {
 
 .form-control-radio legend {
     text-align: right;
-    padding-left: 3px;
+    padding-left: 3px; /* to align label with other form controls */
     padding-right: 17px;
 }
 
@@ -190,9 +190,9 @@ dialog {
 
 /* || TABLE */
 table {
-    table-layout: fixed;
+    table-layout: fixed; /* so cell dimensions do not change with content */
     border-spacing: 0px;
-    border-collapse: collapse; /* Get rid of spacing between cells */
+    border-collapse: collapse; /* get rid of spacing between cells */
     border: none;
     border-radius: var(--radius);
     box-shadow: 0px 1px 10px 1px #e1e1e1;
@@ -210,7 +210,7 @@ td {
 }
 
 th {
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1; /* separate header from table data */
 }
 
 td {
