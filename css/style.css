@@ -132,6 +132,7 @@ dialog {
 }
 
 .form-control input {
+    font-family: var(--main-font);
     border: 1px solid #dadada;
     border-radius: 5px;
     padding: 5px;
