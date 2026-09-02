@@ -1,3 +1,18 @@
+/* || FONTS */
+@font-face {
+    font-family: "CrimsonPro";
+    src: url("../fonts/CrimsonPro-Black.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CrimsonPro";
+    src: url("../fonts/CrimsonPro-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* || RESETS */
 html {
   box-sizing: border-box;
@@ -18,7 +33,7 @@ legend {
 
 /* || VARIABLES */
 :root {
-    --main-font: system-ui;
+    --main-font: CrimsonPro;
     --primary-background: #00bfff;
     --radius: 15px;
 }
@@ -32,7 +47,7 @@ body {
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    gap: 40px;
+    gap: 40px; /* spacing between table and new book btn */
 }
 
 dialog {
@@ -42,6 +57,7 @@ dialog {
 }
 
 button {
+    font-family: var(--main-font);
     cursor: pointer;
 }
 
