@@ -210,8 +210,8 @@ td {
     padding: 10px;
 }
 
-th {
-    border-bottom: 1px solid #e1e1e1; /* separate header from table data */
+table:has(tbody tr) th {
+    border-bottom: 1px solid #e1e1e1; /* separate header from table data when table not empty */
 }
 
 td {
