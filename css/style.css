@@ -162,22 +162,17 @@ dialog {
     width: 160px;
 }
 
-.form-control-radio {
-    display: block; /* to use floats to position radio btns */
+.form-control-checkbox {
+    display: block; /* to use floats to position checkbox */
+    height: 27px;
+    margin-left: 150px;
     margin-bottom: 20px;
 }
 
-.form-control-radio legend,
-.form-control-radio input,
-.form-control-radio label {
+.form-control-checkbox input,
+.form-control-checkbox label {
     font-family: var(--main-font);
     float: left;
-}
-
-.form-control-radio legend {
-    text-align: right;
-    padding-left: 3px; /* to align label with other form controls */
-    padding-right: 17px;
 }
 
 .form-control:last-child {

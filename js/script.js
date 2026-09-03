@@ -126,11 +126,11 @@ formSubmit.addEventListener("click", (event) => {
     let title = document.querySelector("input[name='title']");
     let author = document.querySelector("input[name='author']");
     let pages = document.querySelector("input[name='pages']");
-    let read = document.querySelector("input[name='read']:checked");
+    let read = document.querySelector("input[name='read']");
     if (title === null || author === null || pages === null || read === null) {
         return;
     }
-    addBookToLibrary(title.value, author.value, pages.value, read.value);
+    addBookToLibrary(title.value, author.value, pages.value, read.checked);
     displayBooks();
 });
 

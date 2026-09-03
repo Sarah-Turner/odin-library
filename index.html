@@ -29,14 +29,9 @@
                 <label for="pages-input">Pages*:</label>
                 <input required id="pages-input" type="number" name="pages" min="1">
             </div>
-            <div class="form-control-radio">
-                <fieldset>
-                    <legend>Have you read it?*:</legend>
-                    <input required id="not-read" type="radio" name="read" value="false">
-                    <label for="not-read">No</label>
-                    <input required id="read" type="radio" name="read" value="true">
-                    <label for="read">Yes</label>
-                </fieldset>
+            <div class="form-control-checkbox">
+                <input id="read-input" name="read" value="true" type="checkbox">
+                <label for="read-input">Read</label>
             </div>
             <div class="form-control">
                 <button class="form-submit-btn" type="submit">Add Book</button>
